@@ -104,15 +104,11 @@ img {
   margin-bottom: 10px;
 }
 
-.FilterModal form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
 .FilterModal label {
-  font-size: 14px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 20px;
   font-weight: bold;
+  margin-bottom: 10px;
 }
 /* Increase the width of the Select component */
 .FilterModal select {
@@ -135,7 +131,10 @@ img {
   border-radius: 4px;
   cursor: pointer;
 }
-
+.ant-space {
+  margin-top: 10px;
+  width: 100%;
+}
 .FilterModal button:hover {
   background-color: #40a9ff;
 }

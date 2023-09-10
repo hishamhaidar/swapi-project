@@ -12,7 +12,14 @@ function Pages({
   currPage,
   setCurrPage,
   searchedText,
+  selectedValue,
+  selectedCategory,
 }) {
+  const categorySpecificTag = {
+    planets: "homeworld",
+    films: "films",
+    species: "species",
+  };
   const refreshPage = () => {
     handlePageChange(currPage);
   };
@@ -24,8 +31,19 @@ function Pages({
       const response = await swApi.get(
         `people/?page=${page}&search=${searchedText}`
       );
-      console.log(response?.data);
-      setPeopleData(response?.data);
+
+      if (selectedValue && selectedCategory) {
+        const filteredResults = response?.data?.results.filter((person) =>
+          person[categorySpecificTag[selectedCategory]].includes(selectedValue)
+        );
+
+        setPeopleData({
+          ...response.data,
+          results: filteredResults,
+        });
+      } else {
+        setPeopleData(response?.data);
+      }
     } catch (error) {
       setError(error?.message);
     } finally {
@@ -35,7 +53,7 @@ function Pages({
 
   useEffect(() => {
     handlePageChange(1); // eslint-disable-next-line
-  }, [searchedText]);
+  }, [searchedText, selectedValue]);
   return (
     <div className="Pages">
       <Pagination
