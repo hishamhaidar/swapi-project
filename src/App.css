@@ -1,0 +1,141 @@
+body {
+  background-color: aliceblue;
+}
+.App {
+  text-align: center;
+}
+/* Person cards*/
+.Cards {
+  padding: 20px;
+  margin: 20px;
+  width: 75%;
+  height: min-content;
+
+  border: blanchedalmond groove;
+}
+.Cards p {
+  font-size: 20px;
+  color: black;
+  font-family: "Bungee";
+  width: 100%;
+  height: 50px;
+  margin: 0 0;
+}
+.Cards:hover {
+  transform: rotate(9deg) translate(20px);
+  cursor: cell;
+  transition: transform 0.5s ease-in-out;
+}
+
+.ant-card-cover {
+  height: 250px;
+  width: 100%;
+}
+img {
+  width: 100%;
+  height: 100%;
+}
+/* main heading of app*/
+#starwarH1 {
+  font-family: "Bungee", cursive;
+  font-size: 60px;
+}
+
+/*
+ People Details Modal
+ */
+.PeopleDetailsModal {
+  width: max-content;
+  border: blanchedalmond groove;
+  background-color: aliceblue;
+}
+.PeopleDetailsModal h1 {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bolder;
+  font-size: 60px;
+}
+.PeopleDetailsModal h2 {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bolder;
+  font-size: 50px;
+}
+.PeopleDetailsModal p,
+.PeopleDetailsModal li {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 30px;
+}
+.PeopleDetailsModal svg {
+  font-size: xxx-large;
+}
+
+/* pages with refresh button*/
+
+.Pages {
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+/*Searching and filter*/
+.search-bar {
+  width: 50%;
+}
+
+.Search-Filter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+/*filtering modal*/
+/* Filtering Modal */
+.FilterModal {
+  width: 300px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.FilterModal h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.FilterModal form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.FilterModal label {
+  font-size: 14px;
+  font-weight: bold;
+}
+/* Increase the width of the Select component */
+.FilterModal select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%; /* Set the width to 100% or a specific value */
+}
+
+/* Increase the width of the dropdown menu */
+.ant-select-dropdown {
+  width: max-content; /* Set the desired width */
+}
+
+.FilterModal button {
+  padding: 8px 16px;
+  background-color: #1890ff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.FilterModal button:hover {
+  background-color: #40a9ff;
+}
