@@ -76,19 +76,24 @@ const AvailableFilters = ({
               placeholder={`Select a ${selectedCategory}`}
               onChange={setTempSelectedValue}
             >
-              {selectedCategory === "films" &&
-                optionsData.map((option) => (
-                  <Option key={option?.url} value={option?.url}>
-                    {option?.title}
-                  </Option>
-                ))}
-              {(selectedCategory === "planets" ||
-                selectedCategory === "species") &&
-                optionsData.map((option) => (
-                  <Option key={option?.url} value={option?.url}>
-                    {option?.name}
-                  </Option>
-                ))}
+              {!loading && (
+                <>
+                  {" "}
+                  {selectedCategory === "films" &&
+                    optionsData.map((option) => (
+                      <Option key={option?.url} value={option?.url}>
+                        {option?.title}
+                      </Option>
+                    ))}
+                  {(selectedCategory === "planets" ||
+                    selectedCategory === "species") &&
+                    optionsData.map((option) => (
+                      <Option key={option?.url} value={option?.url}>
+                        {option?.name}
+                      </Option>
+                    ))}
+                </>
+              )}
             </Select>
 
             <Button type="primary" onClick={handleOk}>
